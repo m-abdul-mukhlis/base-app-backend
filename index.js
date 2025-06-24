@@ -17,8 +17,8 @@ const imagekit = new ImageKit({
 
 const generateRandomFileName = (ext = 'jpg') => {
   const timestamp = Date.now();
-  const random = Math.random().toString(36).substring(2, 10);
-  return `img_${timestamp}_${random}.${ext}`;
+  // const random = Math.random().toString(36).substring(2, 10);
+  return `img_${timestamp}.${ext}`;
 };
 
 app.post('/upload', upload.single('image'), async (req, res) => {
