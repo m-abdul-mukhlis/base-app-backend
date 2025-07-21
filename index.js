@@ -3,6 +3,7 @@ const multer = require('multer');
 const cors = require('cors');
 const ImageKit = require('imagekit');
 const fs = require('fs');
+require('dotenv').config();
 
 const app = express();
 app.use(cors());
@@ -17,7 +18,6 @@ const imagekit = new ImageKit({
 
 const generateRandomFileName = (ext = 'jpg') => {
   const timestamp = Date.now();
-  // const random = Math.random().toString(36).substring(2, 10);
   return `img_${timestamp}.${ext}`;
 };
 
